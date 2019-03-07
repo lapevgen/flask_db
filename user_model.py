@@ -22,7 +22,7 @@ class UserModel:
         
     def get(self, user_id):
         cursor = self.connection.cursor()
-        cursor.execute("SELECT * FROM users WHERE id = ?", (str(user_id)))
+        cursor.execute("SELECT * FROM users WHERE id = ?", (str(user_id), ))
         row = cursor.fetchone()
         return row
      
